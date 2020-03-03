@@ -63,3 +63,16 @@ a {
   border: none;
   transition: background-color 0.3s ease;
 }
+.btn:hover {
+  cursor: pointer;
+}
+.btn-primario {
+  background-color: var(--gris2);
+  color: var(--blanco);
+}
+.btn-primario:hover {
+  background: var(--gris3);
+}
+.btn-secundario {
+  background-color: var(--gris1);
+}
