@@ -7,4 +7,14 @@
   --headingFont: "Raleway", sans-serif;
   --textFont: "Roboto", sans-serif;
 }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+}
 
