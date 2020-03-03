@@ -52,3 +52,14 @@ a {
   color: var(--gris2);
 }
 
+/** BOTONES **/
+.btn {
+  margin-top: 2rem;
+  font-family: var(--headingFont);
+  padding: 1.5rem;
+  font-size: 1.4;
+  font-weight: 400;
+  border-radius: 0.5rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
