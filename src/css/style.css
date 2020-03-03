@@ -25,3 +25,12 @@ body {
   font-family: var(--textFont);
 }
 
+h1,
+h2 {
+  font-family: var(--headingFont);
+  font-weight: 900;
+  margin: 0 0 4rem 0;
+  text-align: center;
+  color: var(--gris2);
+}
+
