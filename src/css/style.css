@@ -33,4 +33,13 @@ h2 {
   text-align: center;
   color: var(--gris2);
 }
+h1 span {
+  font-weight: 400;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
 
