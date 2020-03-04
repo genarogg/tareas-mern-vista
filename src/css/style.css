@@ -155,3 +155,12 @@ aside {
   margin-right: 2rem;
 }
 
+/** Formulario crear y editar tareas **/
+.formulario {
+  background-color: var(--gris3);
+  padding: 4rem;
+}
+.formulario form {
+  max-width: 600px;
+  margin: 0 auto;
+}
