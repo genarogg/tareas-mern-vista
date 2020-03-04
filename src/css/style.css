@@ -133,3 +133,9 @@ aside {
   line-height: 1.5;
   font-weight: 300;
 }
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gris2);
+  padding: 4rem;
+}
