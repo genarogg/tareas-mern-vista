@@ -90,3 +90,11 @@ a {
   background-color: transparent;
 }
 
+@media (min-width: 768px) {
+  .contenedor-app {
+    display: flex;
+    min-height: 100vh;
+  }
+
+}
+
