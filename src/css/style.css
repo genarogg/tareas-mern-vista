@@ -76,3 +76,10 @@ a {
 .btn-secundario {
   background-color: var(--gris1);
 }
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-submit:hover {
+  background-color: var(--gris2);
+}
