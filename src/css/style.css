@@ -126,3 +126,10 @@ aside {
 }
 .listado-proyectos li {
   margin-bottom: 2rem;
+}
+.listado-proyectos li a {
+  font-size: 1.4rem;
+  color: var(--gris2);
+  line-height: 1.5;
+  font-weight: 300;
+}
