@@ -147,3 +147,11 @@ aside {
 .nombre-usuario span {
   font-weight: 900;
 }
+.nav-principal a {
+  color: var(--blanco);
+  text-decoration: none;
+}
+.nav-principal a:first-of-type {
+  margin-right: 2rem;
+}
+
