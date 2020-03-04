@@ -96,5 +96,12 @@ a {
     min-height: 100vh;
   }
 
+  aside {
+    background-color: var(--blanco);
+    flex: 0 0 300px;
+  }
+  .seccion-principal {
+    flex: 1;
+  }
 }
 
