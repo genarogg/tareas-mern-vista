@@ -118,3 +118,11 @@ aside {
   border-radius: 0;
   background-color: var(--gris1);
 }
+.formulario-nuevo-proyecto .input-text::placeholder {
+  color: var(--gris2);
+}
+.proyectos {
+  margin-top: 10rem;
+}
+.listado-proyectos li {
+  margin-bottom: 2rem;
