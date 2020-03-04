@@ -139,3 +139,11 @@ aside {
   background-color: var(--gris2);
   padding: 4rem;
 }
+.nombre-usuario {
+  color: var(--blanco);
+  font-size: 2.2rem;
+  margin: 0;
+}
+.nombre-usuario span {
+  font-weight: 900;
+}
