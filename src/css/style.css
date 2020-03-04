@@ -105,3 +105,11 @@ a {
   }
 }
 
+/* BARRA LATERAL */
+aside {
+  padding: 3rem;
+}
+
+.formulario-nuevo-proyecto {
+  margin-top: 6rem;
+}
