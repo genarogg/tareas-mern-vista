@@ -260,4 +260,23 @@ aside {
   color: var(--blanco);
 }
 
+.tarea-enter,
+.proyecto-enter {
+  opacity: 0;
+}
+.tarea-enter-active,
+.proyecto-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.tarea-exit,
+.proyecto-exit {
+  opacity: 1;
+}
+.tarea-exit-active,
+.proyecto-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
 
