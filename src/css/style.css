@@ -211,3 +211,8 @@ aside {
 .tarea .acciones .btn:first-of-type {
   margin-right: 1rem;
 }
+.tarea p {
+  font-size: 1.6rem;
+  flex: 1;
+  padding-right: 2rem;
+}
