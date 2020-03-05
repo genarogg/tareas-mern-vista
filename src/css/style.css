@@ -179,3 +179,13 @@ aside {
   width: 100%;
 }
 
+/** TAREAS LISTADO **/
+.contenedor-tareas {
+  padding: 4rem;
+}
+
+.listado-tareas {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
