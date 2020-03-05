@@ -236,5 +236,19 @@ aside {
   cursor: pointer;
   border: none;
 }
+.mensaje {
+  text-align: center;
+  font-size: 1.6rem;
+  border-radius: 0;
+}
+.mensaje:hover {
+  cursor: default;
+}
+.completo,
+.correcto {
+  background-color: rgba(154, 252, 154, 0.3);
+  color: var(--gris3);
+}
+
 
 
