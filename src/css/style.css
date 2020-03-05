@@ -226,3 +226,15 @@ aside {
 .estado {
   margin-right: 1rem;
 }
+.estado button,
+.mensaje {
+  font-weight: 900;
+  font-family: var(--textFont);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+
