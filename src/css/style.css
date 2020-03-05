@@ -249,6 +249,9 @@ aside {
   background-color: rgba(154, 252, 154, 0.3);
   color: var(--gris3);
 }
-
+.incompleto {
+  background-color: rgba(255, 178, 178, 0.4);
+  color: var(--gris3);
+}
 
 
