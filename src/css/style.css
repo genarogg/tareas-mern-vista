@@ -296,3 +296,15 @@ aside {
   border-radius: 1rem;
 }
 
+.campo-form {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.campo-form:last-of-type {
+  margin: 0;
+}
+.campo-form label {
+  flex: 0 0 100px;
+  font-family: var(--textFont);
+}
