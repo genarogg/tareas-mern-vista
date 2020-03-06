@@ -308,3 +308,10 @@ aside {
   flex: 0 0 100px;
   font-family: var(--textFont);
 }
+.campo-form input[type="password"],
+.campo-form input[type="email"],
+.campo-form input[type="text"] {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  flex: 1;
+}
