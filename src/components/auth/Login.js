@@ -20,13 +20,20 @@ const Login = () => {
             />
           </div>
           <div className="compo-form">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="password">Password</label>
             <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Tu Email"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Tu Password"
               onChange={onChange}
+            />
+          </div>
+          <div className="compo-form">
+            <input
+              type="submit"
+              value="Iniciar Secion"
+              className="btn btn-primario btn-block"
             />
           </div>
         </form>
