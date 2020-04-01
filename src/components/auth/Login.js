@@ -5,11 +5,11 @@ const Login = () => {
     /*  */
   };
   return (
-    <div className="from-usuario">
+    <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar Seción</h1>
         <form action="">
-          <div className="compo-form">
+          <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -19,7 +19,7 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
-          <div className="compo-form">
+          <div className="campo-form">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -29,7 +29,7 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
-          <div className="compo-form">
+          <div className="campo-form">
             <input
               type="submit"
               value="Iniciar Secion"
