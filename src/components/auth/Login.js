@@ -1,6 +1,12 @@
 import React from "react";
 
 const Login = () => {
+
+    /* State para iniciar Sesión */
+    const [usuario, guardar] = useState({
+        email: "",
+        password: ""
+    })
   const onChange = () => {
     /*  */
   };
@@ -32,7 +38,7 @@ const Login = () => {
           <div className="campo-form">
             <input
               type="submit"
-              value="Iniciar Secion"
+              value="Iniciar Sesion"
               className="btn btn-primario btn-block"
             />
           </div>
