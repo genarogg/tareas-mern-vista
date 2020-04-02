@@ -19,7 +19,7 @@ const Login = () => {
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar Seción</h1>
-        <form action="">
+        <form>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
