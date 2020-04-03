@@ -15,11 +15,21 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  /* Cuando el usuario quiere iniciar sesion */
+  const onSubmit = e => {
+
+    e.preventDefault();
+
+    /* Validar que no haya campos vacios */
+    /* Pasarlo al action */
+  }
+
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar Seción</h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
