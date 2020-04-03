@@ -66,7 +66,17 @@ const NuevaCuenta = () => {
               onChange={onChange}
             />
           </div>
-          
+          <div className="campo-form">
+            <label htmlFor="comfirmar">Confirmar Password</label>
+            <input
+              type="password"
+              name="confirmar"
+              id="confirmar"
+              placeholder="Repite tu password"
+              value={confirmar}
+              onChange={onChange}
+            />
+          </div>
           
         </form>
         
