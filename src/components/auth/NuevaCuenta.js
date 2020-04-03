@@ -11,6 +11,14 @@ const NuevaCuenta = () => {
 
   /* Extraer Usuario */
   const { nombre, email, password, confirmar } = usuario;
+  const onChange = (e) => {
+    guardarUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  /* Cuando el usuario quiere iniciar sesion */
   
 
   return (
