@@ -44,7 +44,18 @@ const NuevaCuenta = () => {
               onChange={onChange}
             />
           </div>
-        
+          <div className="campo-form">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Tu Email"
+              value={email}
+              onChange={onChange}
+            />
+          </div>
+          
           
         </form>
         
