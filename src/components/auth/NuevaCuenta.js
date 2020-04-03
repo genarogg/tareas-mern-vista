@@ -55,6 +55,17 @@ const NuevaCuenta = () => {
               onChange={onChange}
             />
           </div>
+          <div className="campo-form">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Tu Password"
+              value={password}
+              onChange={onChange}
+            />
+          </div>
           
           
         </form>
