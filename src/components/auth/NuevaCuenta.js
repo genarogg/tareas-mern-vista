@@ -32,7 +32,21 @@ const NuevaCuenta = () => {
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
         <h1>Obtener una cuenta</h1>
+        <form onSubmit={onSubmit}>
+          <div className="campo-form">
+            <label htmlFor="nombre">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Tu nombre"
+              value={nombre}
+              onChange={onChange}
+            />
+          </div>
         
+          
+        </form>
         
       </div>
     </div>
