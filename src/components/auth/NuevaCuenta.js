@@ -77,7 +77,13 @@ const NuevaCuenta = () => {
               onChange={onChange}
             />
           </div>
-          
+          <div className="campo-form">
+            <input
+              type="submit"
+              value="Registrarme"
+              className="btn btn-primario btn-block"
+            />
+          </div>
         </form>
         
       </div>
