@@ -2,12 +2,17 @@ import React, { Fragment, useState } from "react";
 
 const NuevoProyecto = () => {
   /* State para el Proyecto */
-  const [proyecto, guardarProyecto] = (e) => {
+  const [proyecto, guardarProyecto] = useState => ({
+    nombre: ""
+  });
+
+  const onchangeProyecto = e => {
     guardarProyecto({
       ...proyecto,
       [e.target.name]: e.target.value,
     });
-  };
+
+  }
   return (
     <Fragment>
       <button type="button" className="btn btn-block btn-primario">
