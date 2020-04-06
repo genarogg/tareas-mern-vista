@@ -1,15 +1,20 @@
 import React from "react";
 
-const Tarea = () => {
+const Tarea = ({tarea}) => {
   return (
     <li className="tarea sombra">
-      <p>{Tarea.nombre}</p>
+      <p>{tarea.nombre}</p>
       <div className="estado">
-        {Tarea.estado} ? ({" "}
+        {tarea.estado
+        ?(
         <button type="button" className="completo">
           Completo
         </button>
-        )
+        ): (
+        <button type="button" className="incompleto">
+          InCompleto
+        </button>
+        ) }
       </div>
     </li>
   );
