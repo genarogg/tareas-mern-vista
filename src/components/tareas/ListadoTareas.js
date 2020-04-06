@@ -1,4 +1,5 @@
 import React, {Fragment} from "react"
+import Tarea from "../tareas/Tarea"
 
 const ListadoTareas = () => {
 
@@ -12,9 +13,9 @@ const ListadoTareas = () => {
     return(<Fragment>
         <h2>Proyecto: Tienda Virtual</h2>
         <ul className="listado-tareas">
-            {tareas.length === 0
+            {tareasProyecto.length === 0
             ? (<li className="tarea"><p>No hay tareas</p></li>) 
-            : {tareasProyecto.map(tarea => (<Tarea tarea={tarea}/>))}}
+            : tareasProyecto.map(tarea => (<Tarea tarea={tarea}/>))}
         </ul>
     </Fragment>)
 }
