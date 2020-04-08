@@ -5,12 +5,13 @@ import proyectoContext from "../../context/proyectos/proyectoContext";
 const ListadoProyecto = () => {
   const proyectosContext = useContext(proyectoContext);
   const { proyectos, obtenerProyectos } = proyectosContext;
-
-  if (proyectos.length === 0) return null;
-
+/* Obtner proyectos */
   useEffect(() => {
+    obtenerProyectos();
+  }, []);
 
-  }, [])
+  /* Revisa si proyectos tiene contenido */
+  if (proyectos.length === 0) return null;
 
   return (
     <ul className="listado-proyectos">

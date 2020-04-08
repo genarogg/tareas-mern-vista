@@ -7,12 +7,14 @@ import { FORMULARIO_PROYECTO,
          OBTENER_PROYECTOS 
         } from "../../types";
 
-const proyectos = [
-  { id: 1, nombre: "Tienda Virtual" },
-  { id: 2, nombre: "Intranet" },
-  { id: 3, nombre: "Diseño de sitio web" },
-];
+
 const ProyectoState = (props) => {
+  const proyectos = [
+    { id: 1, nombre: "Tienda Virtual" },
+    { id: 2, nombre: "Intranet" },
+    { id: 3, nombre: "Diseño de sitio web" },
+  ];
+
   const initialState = {
     proyectos: [],
     formulario: false,
@@ -28,20 +30,20 @@ const ProyectoState = (props) => {
   };
 
   /* Obtener los proyectos */
-  const ObtenerProyectos = proyectos => {
+  const obtenerProyectos = () => {
     dispatch({
       type: OBTENER_PROYECTOS,
       payload: proyectos
     })
   }
-  const
+  
   return (
     <proyectoContext.Provider
       value={{
         proyectos: state.proyectos,
         formulario: state.formulario,
         mostrarFormulario,
-        ObtenerProyectos
+        obtenerProyectos
       }}
     >
       {props.children}
