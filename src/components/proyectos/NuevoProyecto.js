@@ -3,7 +3,7 @@ import proyectoContext from "../../context/proyectos/proyectoContext";
 
 const NuevoProyecto = () => {
   /* Obtener el state del formaulario */
-  const proyectosContext = proyectoContext;
+  const proyectosContext = useContext(proyectoContext);
   const { formulario } = proyectosContext;
 
   /* State para el Proyecto */
@@ -33,6 +33,7 @@ const NuevoProyecto = () => {
   };
   return (
     <Fragment>
+      {console.log(formulario)}
       <button type="button" className="btn btn-block btn-primario">
         Nuevo Proyecto
       </button>
