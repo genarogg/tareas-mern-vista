@@ -32,10 +32,11 @@ const NuevoProyecto = () => {
     /* Reiniciar el form */
 
     /* Mostrar el formulario */
-    const onClickFormulario = () =>{
-      maostrarFormulario()
-    }
+    
   };
+  const onClickFormulario = () =>{
+    mostrarFormulario()
+  }
   return (
     <Fragment>
       {console.log(formulario)}
