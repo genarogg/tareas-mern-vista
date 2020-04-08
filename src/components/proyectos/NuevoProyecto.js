@@ -4,7 +4,7 @@ import proyectoContext from "../../context/proyectos/proyectoContext";
 const NuevoProyecto = () => {
   /* Obtener el state del formaulario */
   const proyectosContext = useContext(proyectoContext);
-  const { formulario } = proyectosContext;
+  const { formulario, mostrarFormulario } = proyectosContext;
 
   /* State para el Proyecto */
   const [proyecto, guardarProyecto] = useState({
@@ -30,11 +30,16 @@ const NuevoProyecto = () => {
     /* Agregar al state */
 
     /* Reiniciar el form */
+
+    /* Mostrar el formulario */
+    const onClickFormulario = () =>{
+      maostrarFormulario()
+    }
   };
   return (
     <Fragment>
       {console.log(formulario)}
-      <button type="button" className="btn btn-block btn-primario">
+      <button type="button" className="btn btn-block btn-primario" onClick={onClickFormulario}>
         Nuevo Proyecto
       </button>
       {formulario ? (
@@ -42,7 +47,7 @@ const NuevoProyecto = () => {
           action=""
           className="formulario-nuevo-proyecto"
           onSubmit={onSubmitProyecto}
-        >
+        > 
           <input
             type="text"
             className="input-text"
