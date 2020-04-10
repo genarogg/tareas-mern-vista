@@ -32,7 +32,9 @@ const NuevoProyecto = () => {
     /* Agregar al state */
     agregarProyecto(proyecto)
     /* Reiniciar el form */
-
+    guardarProyecto({
+      nombre: ""
+    })
     /* Mostrar el formulario */
     
   };

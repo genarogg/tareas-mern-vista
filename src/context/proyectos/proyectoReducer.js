@@ -11,15 +11,18 @@ export default (state, action) => {
         ...state,
         formulario: true,
       };
+
     case OBTENER_PROYECTOS:
       return {
         ...state,
         proyectos: action.payload,
       };
+
     case AGREGAR_PROYECTOS:
       return {
-        ...state,
+        ...state, 
         proyectos: [...state.proyectos, action.payload],
+        formulario: false,
       };
     default:
       return state;

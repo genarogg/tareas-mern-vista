@@ -4,7 +4,12 @@ import uuid from "uuid";
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
 
-import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS, AGREGAR_PROYECTOS } from "../../types";
+import {
+  FORMULARIO_PROYECTO,
+  OBTENER_PROYECTOS,
+  AGREGAR_PROYECTOS,
+  VALIDAR_FORMULARIO,
+} from "../../types";
 
 const ProyectoState = (props) => {
   const proyectos = [
@@ -16,6 +21,7 @@ const ProyectoState = (props) => {
   const initialState = {
     proyectos: [],
     formulario: false,
+    errorFormulario: false,
   };
   /* Dispatch para ejecutar las acciones */
   const [state, dispatch] = useReducer(proyectoReducer, initialState);
@@ -36,24 +42,32 @@ const ProyectoState = (props) => {
   };
 
   /* Agregar nuevo proyecto */
-  const agregarProyecto = proyecto => {
-    proyecto.id = uuid.v4()
+  const agregarProyecto = (proyecto) => {
+    proyecto.id = uuid.v4();
 
     /* Insertar el proyecto en el state */
     dispatch({
       type: AGREGAR_PROYECTOS,
-      payload: proyecto
-    })
-  }
+      payload: proyecto,
+    });
+  };
+  /* VAlida el formulario por errores */
+  const mostrarError = () => {
+    dispatch({
+      type: VALIDAR_FORMULARIO,
+    });
+  };
 
   return (
     <proyectoContext.Provider
       value={{
         proyectos: state.proyectos,
         formulario: state.formulario,
+        errorFormulario: state.errorFormulario, 
         mostrarFormulario,
         obtenerProyectos,
-        agregarProyecto 
+        agregarProyecto,
+        mostrarError,
       }}
     >
       {props.children}
