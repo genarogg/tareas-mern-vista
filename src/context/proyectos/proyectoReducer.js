@@ -4,6 +4,7 @@ import {
   AGREGAR_PROYECTOS,
   VALIDAR_FORMULARIO,
   PROYECTO_ACTUAL,
+  ELIMINAR_PROYECTO
 } from "../../types";
 
 export default (state, action) => {
@@ -39,7 +40,14 @@ export default (state, action) => {
           (proyecto) => proyecto.id === action.payload
         ),
       };
+    case ELIMINAR_PROYECTO:
+      return{
+        ...state,
+        proyecto: state.proyectos.filter(
+          (proyecto) => proyecto.id !== action.payload
+        ),
+      }
     default:
-      return state;
+      return state;  
   }
 };
