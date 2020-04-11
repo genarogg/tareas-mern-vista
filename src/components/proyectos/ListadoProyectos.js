@@ -6,7 +6,7 @@ const ListadoProyecto = () => {
   const proyectosContext = useContext(proyectoContext);
   const { proyectos, obtenerProyectos } = proyectosContext;
 /* Obtner proyectos */
-  useEffect(() => {
+  useEffect(() => { 
     obtenerProyectos();
   }, []);
 
