@@ -7,9 +7,12 @@ const FormTareas = () => {
   const { proyecto } = proyectosContext;
 
   /* State del formulario */
-  const [tarea, guardarTarea] = useStete({
+  const [tarea, guardarTarea] = useState({
     nombre: "",
-  })
+  });
+
+  /* extraer el nombre del proyecto */
+  const { nombre } = tarea;
   /* Si no hay proyecto seleccionado */
   if (!proyecto) {
     return null;
@@ -18,6 +21,13 @@ const FormTareas = () => {
   /* Array destructuring para extraer el proyecto actual */
   const [proyectoActual] = proyecto;
 
+  /* Leer los valores del formulario */
+  const handleChange = (e) => {
+    guardarTarea({
+      ...tarea,
+      [e.target.name]: e.target.value,
+    });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -28,7 +38,7 @@ const FormTareas = () => {
     /* Agregar la nneva tarea al state de tareas */
 
     /* Reiniciar el form */
- };
+  };
   return (
     <div className="formulario">
       <form onSubmit={onSubmit}>
@@ -38,6 +48,8 @@ const FormTareas = () => {
             className="input-text"
             placeholder="Nombre Tarea..."
             name="nombre"
+            value={nombre}
+            onChange={handleChange}
           />
         </div>
         <div className="contenedor-input">
