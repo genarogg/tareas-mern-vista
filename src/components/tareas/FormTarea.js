@@ -1,10 +1,15 @@
 import React, { useContext, useState } from "react";
 import proyectoContext from "../../context/proyectos/proyectoContext";
+import tareaContext from "../../context/tareas/tareaContext";
 
 const FormTareas = () => {
   /* Extraer si un proyecto esta activo */
   const proyectosContext = useContext(proyectoContext);
   const { proyecto } = proyectosContext;
+
+  /* Obtener la funcion del context de tarea */
+  const tareasContext = useContext(tareaContext);
+  const { agregarTarea } = tareasContext;
 
   /* State del formulario */
   const [tarea, guardarTarea] = useState({
@@ -36,6 +41,9 @@ const FormTareas = () => {
     /* Pasar la validacion */
 
     /* Agregar la nneva tarea al state de tareas */
+    tarea.proyectoId = proyectoActual.id;
+    tarea.estado = false;
+    agregarTarea(tarea);
 
     /* Reiniciar el form */
   };
