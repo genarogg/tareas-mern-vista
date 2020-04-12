@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import proyectoContext from "../../context/proyectos/proyectoContext";
 
 const FormTareas = () => {
@@ -6,6 +6,10 @@ const FormTareas = () => {
   const proyectosContext = useContext(proyectoContext);
   const { proyecto } = proyectosContext;
 
+  /* State del formulario */
+  const [tarea, guardarTarea] = useStete({
+    nombre: "",
+  })
   /* Si no hay proyecto seleccionado */
   if (!proyecto) {
     return null;
