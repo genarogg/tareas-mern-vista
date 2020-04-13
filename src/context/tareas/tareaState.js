@@ -43,6 +43,7 @@ const TareaState = (props) => {
     ],
     tareasproyecto: null,
     errortarea: false,
+    tareaseleccionada: null,
   };
 
   /* Crear dispatch y state */
@@ -90,12 +91,12 @@ const TareaState = (props) => {
     });
   };
   /* Extrae una tarea para edicion */
-  const guardarTareaActual = tarea => {
+  const guardarTareaActual = (tarea) => {
     dispatch({
-      type:TAREA_ACTUAL,
-      payload: tarea
-    })
-  }
+      type: TAREA_ACTUAL,
+      payload: tarea,
+    });
+  };
 
   return (
     <TareaContext.Provider
@@ -103,6 +104,7 @@ const TareaState = (props) => {
         tareas: state.tareas,
         tareasproyecto: state.tareasproyecto,
         errortarea: state.errortarea,
+        tareaseleccionada: state.tareaseleccionada,
         obtenerTareas,
         agregarTarea,
         validarTarea,
