@@ -2,13 +2,13 @@ import React, { Fragment, useContext } from "react";
 import Tarea from "../tareas/Tarea";
 import proyectoContext from "../../context/proyectos/proyectoContext";
 import tareaContext from "../../context/tareas/tareaContext";
-import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const ListadoTareas = () => {
   /* Obtener el state del proyectos */
   const proyectosContext = useContext(proyectoContext);
   const { proyecto, eliminarProyecto } = proyectosContext;
-  
+
   /* Obtener la funcion del context de tarea */
   const tareasContext = useContext(tareaContext);
   const { tareasproyecto } = tareasContext;
@@ -20,7 +20,6 @@ const ListadoTareas = () => {
 
   /* Array destructuring para extraer el proyecto actual */
   const [proyectoActual] = proyecto;
-
 
   /* Elimnina un proyecto */
   const onClickEliminar = () => {
@@ -36,7 +35,13 @@ const ListadoTareas = () => {
             <p>No hay tareas</p>
           </li>
         ) : (
-          tareasproyecto.map((tarea) => <Tarea key={tarea.id} tarea={tarea} />)
+          <TransitionGroup>
+            {tareasproyecto.map((tarea) => (
+              <CSSTransition key={tarea.id} timeout={300} className="tarea">
+                <Tarea tarea={tarea} />
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
         )}
       </ul>
       <button
