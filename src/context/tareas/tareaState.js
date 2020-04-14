@@ -9,6 +9,7 @@ import {
   ESTADO_TAREA,
   TAREA_ACTUAL,
   ACTUALIZAR_TAREA,
+  LIMPIAR_TAREA
 } from "../../types";
 
 const TareaState = (props) => {
@@ -106,6 +107,13 @@ const TareaState = (props) => {
       payload: tarea
     })
   }
+
+  /* Elimina la tareaseleccionada */
+    const limpiarTarea = () => {
+      dispatch({
+        type: LIMPIAR_TAREA
+      })
+    }
 
   return (
     <TareaContext.Provider
