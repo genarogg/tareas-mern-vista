@@ -9,7 +9,7 @@ import {
   ESTADO_TAREA,
   TAREA_ACTUAL,
   ACTUALIZAR_TAREA,
-  LIMPIAR_TAREA
+  LIMPIAR_TAREA,
 } from "../../types";
 
 const TareaState = (props) => {
@@ -101,19 +101,19 @@ const TareaState = (props) => {
   };
 
   /* Edita o modifica una tarea */
-  const actualizarTarea = tarea => {
+  const actualizarTarea = (tarea) => {
     dispatch({
       type: ACTUALIZAR_TAREA,
-      payload: tarea
-    })
-  }
+      payload: tarea,
+    });
+  };
 
   /* Elimina la tareaseleccionada */
-    const limpiarTarea = () => {
-      dispatch({
-        type: LIMPIAR_TAREA
-      })
-    }
+  const limpiarTarea = () => {
+    dispatch({
+      type: LIMPIAR_TAREA,
+    });
+  };
 
   return (
     <TareaContext.Provider
@@ -129,6 +129,7 @@ const TareaState = (props) => {
         cambiarEstadoTarea,
         guardarTareaActual,
         actualizarTarea,
+        limpiarTarea,
       }}
     >
       {props.children}
