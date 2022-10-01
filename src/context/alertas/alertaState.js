@@ -20,15 +20,14 @@ const AlertaState = (props) => {
       },
     });
 
+    // Después de 5 segundos limpiar la alerta
     setTimeout(() => {
-      dispatch(
-        {
-          type: OCULTAR_ALERTA,
-        },
-        5000
-      );
-    });
+      dispatch({
+        type: OCULTAR_ALERTA,
+      });
+    }, 5000);
   };
+  
 
   return (
     <alertaContext.Provider value={{ alerta: state.alerta, mostrarAlerta }}>

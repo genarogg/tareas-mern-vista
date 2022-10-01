@@ -1,12 +1,30 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useState,useContext, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import AlertaContext from "../../context/alertas/alertaContext";
+import AuthContext from "../../context/autenticacion/authContext";
 
-const NuevaCuenta = () => {
+const NuevaCuenta = (props) => {
   /* Extraer los valores del context */
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
+
+  const authContext = useContext(AuthContext);
+  const { mensaje, autenticado, registrarUsuario } = authContext;
+
+  /* En caso de qeu el usuariok se haya autenticado o registrado o sea un registro duplicado */
+
+  useEffect(() => {
+   if(autenticado){
+    props.history.push('/proyectos')
+   }
+
+   if(mensaje){
+    mostrarAlerta(mensaje.msg, mensaje.categoria);
+  
+   }
+  }, [mensaje, autenticado, props.history])
+  
 
   /* State para iniciar Sesión */
   const [usuario, guardarUsuario] = useState({
@@ -28,17 +46,34 @@ const NuevaCuenta = () => {
   /* Cuando el usuario quiere iniciar sesion */
   const onSubmit = (e) => {
     e.preventDefault();
-console.log(alerta.categoria)
+    /* console.log(alerta.categoria) */
     /* Validar que no haya campos vacios */
     if (
       (nombre.trim() === "" || email.trim() === "" || password.trim() === "",
       confirmar.trim() === "")
     ) {
       mostrarAlerta("Todos los campos son obligatorios", " alerta-error");
+      return;
     }
     /* Longitud del password de minimo 6 caracteres */
+
+    if (password.length < 6) {
+      mostrarAlerta(
+        "El password debe de ser de al menos 6 caracteres",
+        "alerta-error"
+      );
+      return;
+    }
+
     /* Comporbar que los 2 password sean iguales */
+    if (password !== confirmar) {
+      mostrarAlerta("los password deben de ser iguales", "alerta-error");
+      return;
+    }
+
     /* Pasarlo al action */
+
+    registrarUsuario({ nombre, email, password });
   };
 
   return (
