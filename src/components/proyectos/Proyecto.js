@@ -3,6 +3,7 @@ import proyectoContext from "../../context/proyectos/proyectoContext";
 import tareaContext from "../../context/tareas/tareaContext";
 
 const Proyecto = ({ proyecto }) => {
+
   /* Obtener el state del proyectos */
   const proyectosContext = useContext(proyectoContext);
   const { proyectoActual } = proyectosContext;
@@ -13,6 +14,7 @@ const Proyecto = ({ proyecto }) => {
 
   /* Funcion para agregar el proyecto actual */
   const seleccionarProyecto = (id) => {
+    
     proyectoActual(id); /* Fija el proyecto actual */
     obtenerTareas(id); /* Filtrar las tareas cuando se de click */
   };

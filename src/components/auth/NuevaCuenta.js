@@ -46,7 +46,7 @@ const NuevaCuenta = (props) => {
   /* Cuando el usuario quiere iniciar sesion */
   const onSubmit = (e) => {
     e.preventDefault();
-    /* console.log(alerta.categoria) */
+    
     /* Validar que no haya campos vacios */
     if (
       (nombre.trim() === "" || email.trim() === "" || password.trim() === "",

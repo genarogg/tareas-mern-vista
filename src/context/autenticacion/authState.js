@@ -27,7 +27,7 @@ const AuthState = (props) => {
   /* Funciones */
 
   const registrarUsuario = async (datos) => {
-    console.log("hola");
+   
     try {
       const respuesta = await clienteAxios.post("/api/usuarios", datos);
       console.log(respuesta.data);
@@ -63,7 +63,7 @@ const AuthState = (props) => {
 
     try {
       const respuesta = await clienteAxios.get("/api/auth");
-      /* console.log(respuesta); */
+    
 
       dispath({
         type: OBTENER_USUARIO,
