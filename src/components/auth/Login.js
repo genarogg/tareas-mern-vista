@@ -40,19 +40,18 @@ const Login = (props) => {
     iniciarSesion({ email, password });
   };
 
-  
   /* En caso de qeu el usuariok o el password no exista */
 
   useEffect(() => {
-    if(autenticado){
-     props.history.push('/proyectos')
+    if (autenticado) {
+      props.history.push("/proyectos");
     }
- 
-    if(mensaje){
-     mostrarAlerta(mensaje.msg, mensaje.categoria);
-   
+
+    if (mensaje) {
+      mostrarAlerta(mensaje.msg, mensaje.categoria);
     }
-   }, [mensaje, autenticado, props.history])
+    // eslint-disable-next-line
+  }, [mensaje, autenticado, props.history]);
 
   return (
     <div className="form-usuario">

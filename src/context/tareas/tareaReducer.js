@@ -5,7 +5,6 @@ import {
     ELIMINAR_TAREA,
     TAREA_ACTUAL,
     ACTUALIZAR_TAREA,
-    ESTADO_TAREA,
     LIMPIAR_TAREA,
   } from "../../types";
   // eslint-disable-next-line

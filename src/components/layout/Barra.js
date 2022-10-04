@@ -4,10 +4,11 @@ import AuthContext from "../../context/autenticacion/authContext";
 const Barra = () => {
   /* Extraer la informacion */
   const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado,cerrarSesion } = authContext;
+  const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
 
   useEffect(() => {
     usuarioAutenticado();
+    // eslint-disable-next-line
   }, []);
   return (
     <header className="app-header">
@@ -17,10 +18,14 @@ const Barra = () => {
         </p>
       ) : null}
       <nav className="nav-principal">
-        <button  className="btn btn-blank cerrar-sesion"
-          onClick={()=>{cerrarSesion()}}
-          
-        >cerrar sesion</button>
+        <button
+          className="btn btn-blank cerrar-sesion"
+          onClick={() => {
+            cerrarSesion();
+          }}
+        >
+          cerrar sesion
+        </button>
       </nav>
     </header>
   );
