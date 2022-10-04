@@ -11,12 +11,15 @@ import {
   CERRAR_SESION,
 } from "../../types";
 
+import tokenAuth from "../../config/tokenAuth";
+
 const AuthState = (props) => {
   const initialState = {
     token: localStorage.getItem("token"),
     autenticado: null,
     usuario: null,
     mensaje: null,
+    cargando: true
   };
 
   const [state, dispath] = useReducer(authReducer, initialState);
@@ -34,8 +37,7 @@ const AuthState = (props) => {
       });
 
       /* Obtener el usuario */
-      usuarioAutenticado()
-
+      usuarioAutenticado();
     } catch (error) {
       console.log(error);
 
@@ -56,16 +58,53 @@ const AuthState = (props) => {
 
     if (token) {
       /* TODO: Funcion para enviar el token por header */
+      tokenAuth(token);
     }
 
     try {
       const respuesta = await clienteAxios.get("/api/auth");
-      console.log(respuesta);
+      /* console.log(respuesta); */
+
+      dispath({
+        type: OBTENER_USUARIO,
+        payload: respuesta.data,
+      });
     } catch (error) {
+      console.log(error.response);
       dispath({
         type: LOGIN_ERROR,
       });
     }
+  };
+
+  /* cuando el susuario inicia sesion */
+  const iniciarSesion = async (datos) => {
+    try {
+      const respuesta = await clienteAxios.post("/api/auth", datos);
+
+      dispath({ type: LOGIN_EXITOSO, payload: respuesta.data });
+
+      /* Obtener el usuario */
+      usuarioAutenticado();
+    } catch (error) {
+      console.log(error.response.data.msg);
+
+      const alerta = {
+        msg: error.response.data.msg,
+        categoria: "alerta-error",
+      };
+      dispath({
+        type: LOGIN_ERROR,
+        payload: alerta,
+      });
+    }
+  };
+
+  /* cierra la sesion del usuario */
+  const cerrarSesion = () => {
+    dispath({
+      type: CERRAR_SESION,
+    });
   };
 
   return (
@@ -75,7 +114,11 @@ const AuthState = (props) => {
         autenticado: state.autenticado,
         usuario: state.usuario,
         mensaje: state.mensaje,
+        cargando: state.cargando,
         registrarUsuario,
+        iniciarSesion,
+        usuarioAutenticado,
+        cerrarSesion,
       }}
     >
       {props.children}
