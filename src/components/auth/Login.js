@@ -91,12 +91,23 @@ const Login = (props) => {
             />
           </div>
         </form>
-        <Link to={"./nueva-cuenta"} className="enlace-cuenta">
-          Obtener Cuenta
-        </Link>
+        <div className="usuario-generico">
+          <Link to={"./nueva-cuenta"} className="enlace-cuenta">
+            Obtener Cuenta
+          </Link>
+          <button
+            className="usuarioDemo"
+            onClick={() => {
+              const email = "correo@correo.com";
+              const password = "871Mc8jK^4z*";
+              iniciarSesion({ email, password });
+            }}
+          >
+            Usuario Demo
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
 export default Login;
