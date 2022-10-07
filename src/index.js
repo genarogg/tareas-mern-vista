@@ -5,8 +5,8 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 
 
-import "./css/normalize.css";
-import "./css/style.css";
+
+import "./css/style.scss";
 
 ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
